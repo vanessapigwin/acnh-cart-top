@@ -19,8 +19,12 @@ This file outlines the one-time processes done to populate the product database 
 
 
 ### Database
-- [ ] Create the relationships
-- [ ] Generate ERD for reference
+- [x] Generate ERD for reference
+- [ ] Create the tables and relationships manually (with SQL, because I need SQL practice)
+
+
+### ERD
+![Link to image](./references/erd.png)
 
 
 ## Tools used
