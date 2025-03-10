@@ -10,7 +10,7 @@ This file outlines the one-time processes done to populate the product database 
 - [x] Remove sheets and columns not needed
 - [x] Add some made up description with ChatGPT (web UI used)
 - [x] Generate csvs for checking
-- [ ] Upload csvs using DBeaver
+- [x] Upload csvs using DBeaver
 
 ### Images
 - [x] Download images from [Google Drive](https://drive.google.com/drive/folders/1XSLItEbUltVep8qP6691AAPg6EXf_DUR) 
