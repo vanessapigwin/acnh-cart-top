@@ -24,5 +24,5 @@ router.register(r"categories", views.CategoryViewSet)
 
 
 urlpatterns = [
-    # path("api/", include(router.urls))
+    path("", include(router.urls))
 ]
