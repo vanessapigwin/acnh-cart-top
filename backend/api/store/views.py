@@ -1,8 +1,6 @@
-from models import Categories
+from store.models import Categories
+from store.serializers import CategorySerializer
 from rest_framework import viewsets
-
-
-from serializers import CategorySerializer
 
 
 class CategoryViewSet(viewsets.ModelViewSet):

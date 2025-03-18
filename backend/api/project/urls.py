@@ -1,5 +1,5 @@
 """
-URL configuration for thenooke project.
+URL configuration for project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -23,4 +23,6 @@ router = routers.DefaultRouter()
 router.register(r"categories", views.CategoryViewSet)
 
 
-urlpatterns = [path("api/", include(router.urls))]
+urlpatterns = [
+    # path("api/", include(router.urls))
+]
