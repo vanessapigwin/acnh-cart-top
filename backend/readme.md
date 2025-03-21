@@ -3,6 +3,9 @@ The API uses the following:
 - Django REST Framework
 - PostgreSQL (hosted in cattoviz)
 
+## To test
+Just type `pytest` while in root
+
 ## How to run
 - Local
     1. Navigate to `backend` directory
