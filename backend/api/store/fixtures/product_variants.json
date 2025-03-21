@@ -1,0 +1,32 @@
+[
+{
+    "model": "store.productvariants",
+    "pk": 3810,
+    "fields": {
+        "color": "white",
+        "filename": "AccessoryGlassThreed0",
+        "description": "A trendy, stretchy 3D glasses, great for fall wear.",
+        "product": 1
+    }
+},
+{
+    "model": "store.productvariants",
+    "pk": 3811,
+    "fields": {
+        "color": "black",
+        "filename": "AccessoryGlassThreed1",
+        "description": "A vibrant, luxurious 3D glasses, great for summer wear.",
+        "product": 1
+    }
+},
+{
+    "model": "store.productvariants",
+    "pk": 3812,
+    "fields": {
+        "color": "black",
+        "filename": "AccessoryMouthHalloween0",
+        "description": "A cozy, luxurious animal nose, great for spring wear.",
+        "product": 2
+    }
+}
+]
