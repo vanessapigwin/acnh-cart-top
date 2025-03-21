@@ -7,14 +7,15 @@
         {
             "name": "Python Debugger: Django",
             "type": "python",
-            "request": "launch",
-            "args": [
-                "runserver"
+            "request": "attach",
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}/api",
+                    "remoteRoot": "/usr/src/api"
+                }
             ],
-            "django": true,
-            // "autoStartBrowser": false,
-            "program": "${workspaceFolder}/api/manage.py",
-            "justMyCode": true
+            "port": 3000,
+            "host": "127.0.0.1"
         }
     ]
 }

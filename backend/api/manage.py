@@ -7,6 +7,15 @@ import sys
 def main():
     """Run administrative tasks."""
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
+
+    if os.environ.get('DEBUG') and any(
+        [os.environ.get('RUN_MAIN'), os.environ.get('WERKZEUG_RUN_MAIN')]
+    ):
+        import debugpy
+        debugpy.listen(("0.0.0.0", 3000))
+        debugpy.wait_for_client()
+        print('Attached')
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
