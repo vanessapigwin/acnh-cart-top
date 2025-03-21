@@ -1,0 +1,22 @@
+[
+{
+    "model": "store.product",
+    "pk": 1,
+    "fields": {
+        "product_name": "3D Glasses",
+        "price": 490,
+        "style_name": "active",
+        "category": 1
+    }
+},
+{
+    "model": "store.product",
+    "pk": 2,
+    "fields": {
+        "product_name": "Animal Nose",
+        "price": 560,
+        "style_name": "cute",
+        "category": 1
+    }
+}
+]

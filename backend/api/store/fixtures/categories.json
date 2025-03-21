@@ -1,0 +1,9 @@
+[
+{
+    "model": "store.categories",
+    "pk": 1,
+    "fields": {
+        "category_name": "accessories"
+    }
+}
+]
