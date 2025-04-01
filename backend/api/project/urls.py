@@ -23,6 +23,4 @@ router = routers.DefaultRouter()
 router.register(r"categories", views.CategoryViewSet)
 
 
-urlpatterns = [
-    path("", include(router.urls))
-]
+urlpatterns = [path("", include(router.urls))]

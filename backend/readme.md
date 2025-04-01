@@ -13,7 +13,7 @@ Just type `pytest` while in root
     3. Build the container with `docker compose build`
     4. Run `docker compose up -d` (assumes the container was built successfully)
 
-- Optional debugger (and docker compose running)
+- Run and debug (and docker compose running)
     1. Press `Ctrl` + `Shift` + `D`
     2. On the upper left portion of VS Code, find the small Play button
     3. Add break points as necessary, call API as necessary

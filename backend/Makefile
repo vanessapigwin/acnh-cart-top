@@ -14,3 +14,6 @@ down:
 
 test: up
 	docker compose exec backend pytest
+
+format:
+	black . --line-length 90
