@@ -22,5 +22,11 @@ from store import views
 router = routers.DefaultRouter()
 router.register(r"categories", views.CategoryViewSet)
 
-
-urlpatterns = [path("", include(router.urls))]
+urlpatterns = [
+    path(
+        "category/<int:category_id>/",
+        views.ProductListViewSet.as_view(),
+        name="product-list",
+    ),
+    path("", include(router.urls)),
+]

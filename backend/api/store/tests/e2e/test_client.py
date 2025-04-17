@@ -17,3 +17,9 @@ def test_get_categories(client):
     expeted_entry = {"category_id": 1, "category_name": "accessories"}
     actual_entry = content.get("results")[0]
     assert actual_entry == expeted_entry
+
+
+def test_get_category_products(client):
+    response = client.get("/category/1/")
+    content = response.json()
+    assert set(["next", "previous", "results"]).issubset(content.keys())
