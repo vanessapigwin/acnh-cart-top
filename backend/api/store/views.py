@@ -29,6 +29,6 @@ class ProductListViewSet(ListAPIView):
                 preview_image=Subquery(filename),
                 description=Subquery(description),
             ).select_related("category")
-            queryset = queryset.filter(category_id=category_id)
+            queryset = queryset.filter(category_id=category_id).order_by("pk")
 
         return queryset
