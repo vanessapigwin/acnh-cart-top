@@ -25,8 +25,13 @@ router.register(r"categories", views.CategoryViewSet)
 urlpatterns = [
     path(
         "category/<int:category_id>/",
-        views.ProductListViewSet.as_view(),
+        views.ProductListView.as_view(),
         name="product-list",
+    ),
+    path(
+        "product/<int:product_id>/",
+        views.ProductVariantsView.as_view(),
+        name='productvariant-list'
     ),
     path("", include(router.urls)),
 ]

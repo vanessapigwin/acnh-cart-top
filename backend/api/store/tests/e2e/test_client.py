@@ -25,6 +25,13 @@ def category_products(client):
     return content
 
 
+@pytest.fixture(scope="module")
+def product_variants(client):
+    response = client.get("/product/2/")
+    content = response.json()
+    return content
+
+
 def test_get_categories(categories):
     # P1: check for pagination
     assert set(["next", "previous", "results"]).issubset(categories.keys())
@@ -52,14 +59,14 @@ def test_get_category_products(category_products):
         "price",
         "style_name",
         "color",
-        "preview_image",
+        "image_link",
         "description",
     ]
     entry = category_products["results"][0]
     assert set(required_fields).issubset(entry.keys())
 
     # P3: url to image is valid
-    url = entry.get("preview_image")
+    url = entry.get("image_link")
     with urllib.request.urlopen(url) as r:
         assert r.status == 200
 
@@ -72,3 +79,9 @@ def test_get_category_products_negative(client):
     # N2: non-existent id will result in error
     r = client.get("/category/350/")
     assert r.status_code == 404
+
+
+def test_get_product_variant(product_variants):
+    # P1: pagination
+    assert set(["next", "previous", "results"]).issubset(product_variants.keys())
+

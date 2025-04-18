@@ -1,5 +1,27 @@
-from store.models import Categories, Product
+from store.models import Categories, Product, ProductVariants
 from rest_framework import serializers
+
+
+listing_common_fields = [
+    "product_id",
+    "product_name",
+    "price",
+    "style_name",
+    "color",
+    "image_link",
+    "description",
+]
+
+
+def build_img_url(obj):
+    """
+    Note: Category `dressup` uses Tops as parent path
+    """
+    category_name = (
+        obj.category_name.title() if obj.category_name != "dressup" else "Tops"
+    )
+    image_link = obj.image_link
+    return f"https://images.cattoviz.com/{category_name}/{image_link}.png"
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -10,27 +32,20 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class ProductListSerializer(serializers.ModelSerializer):
     color = serializers.CharField(read_only=True)
-    preview_image = serializers.SerializerMethodField()
+    image_link = serializers.SerializerMethodField()
     description = serializers.CharField(read_only=True)
 
     class Meta:
         model = Product
-        fields = [
-            "product_id",
-            "product_name",
-            "price",
-            "style_name",
-            "color",
-            "preview_image",
-            "description",
-        ]
+        fields = listing_common_fields
 
-    def get_preview_image(self, obj):
-        """
-        Note: Category `dressup` uses Tops as parent path
-        """
-        category_name = (
-            obj.category_name.title() if obj.category_name != "dressup" else "Tops"
-        )
-        preview_image = obj.preview_image
-        return f"https://images.cattoviz.com/{category_name}/{preview_image}.png"
+    def get_image_link(self, obj):
+        return build_img_url(obj)
+
+
+class ProductVariantSerializer(serializers.ModelSerializer):
+    # variant_id = serializers.PrimaryKeyRelatedField()
+
+    class Meta:
+        model = ProductVariants
+        fields = ["variant_id", "color", "filename", "description", "product"]

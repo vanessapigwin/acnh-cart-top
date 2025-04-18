@@ -1,5 +1,9 @@
 from store.models import Categories, ProductVariants, Product
-from store.serializers import CategorySerializer, ProductListSerializer
+from store.serializers import (
+    CategorySerializer,
+    ProductListSerializer,
+    ProductVariantSerializer,
+)
 from django.db.models import OuterRef, Subquery
 from rest_framework import viewsets
 from rest_framework.generics import ListAPIView
@@ -11,7 +15,7 @@ class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = CategorySerializer
 
 
-class ProductListViewSet(ListAPIView):
+class ProductListView(ListAPIView):
     serializer_class = ProductListSerializer
 
     def get_queryset(self):
@@ -27,7 +31,7 @@ class ProductListViewSet(ListAPIView):
             product_queryset = (
                 Product.objects.annotate(
                     color=Subquery(color),
-                    preview_image=Subquery(filename),
+                    image_link=Subquery(filename),
                     description=Subquery(description),
                 )
                 .select_related("category")
@@ -43,3 +47,13 @@ class ProductListViewSet(ListAPIView):
             return queryset
         else:
             raise NotFound()
+
+
+class ProductVariantsView(ListAPIView):
+    serializer_class = ProductVariantSerializer
+
+    def get_queryset(self):
+        product_id = self.kwargs.get('product_id')
+        queryset = ProductVariants.objects.filter(product=product_id)
+
+        return queryset
