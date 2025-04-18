@@ -1,5 +1,7 @@
+import urllib.request
 from django.test import Client
 import pytest
+import urllib
 
 pytestmark = pytest.mark.django_db
 
@@ -8,19 +10,20 @@ pytestmark = pytest.mark.django_db
 def client():
     return Client()
 
-@pytest.fixture(scope='module')
+
+@pytest.fixture(scope="module")
 def categories(client):
     response = client.get("/categories/")
     content = response.json()
     return content
 
 
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def category_products(client):
     response = client.get("/category/1/")
     content = response.json()
     return content
-    
+
 
 def test_get_categories(categories):
     # P1: check for pagination
@@ -33,9 +36,9 @@ def test_get_categories(categories):
 
 
 def test_get_categories_negative(client):
-    r = client.get('/categories/420/')
+    r = client.get("/categories/420/")
     assert r.status_code == 404
-    assert "No Categories matches the given query" in r.json()['detail'] 
+    assert "No Categories matches the given query" in r.json()["detail"]
 
 
 def test_get_category_products(category_products):
@@ -52,6 +55,20 @@ def test_get_category_products(category_products):
         "preview_image",
         "description",
     ]
-    entry = category_products['results'][0]
+    entry = category_products["results"][0]
     assert set(required_fields).issubset(entry.keys())
-    
+
+    # P3: url to image is valid
+    url = entry.get("preview_image")
+    with urllib.request.urlopen(url) as r:
+        assert r.status == 200
+
+
+def test_get_category_products_negative(client):
+    # N1: missing id will result in error
+    r = client.get("/category/")
+    assert r.status_code == 404
+
+    # N2: non-existent id will result in error
+    r = client.get("/category/350/")
+    assert r.status_code == 404

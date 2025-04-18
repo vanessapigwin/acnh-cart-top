@@ -26,4 +26,11 @@ class ProductListSerializer(serializers.ModelSerializer):
         ]
 
     def get_preview_image(self, obj):
-        return f"https://images.cattoviz.com/Tops/{obj.preview_image}.png"
+        """
+        Note: Category `dressup` uses Tops as parent path
+        """
+        category_name = (
+            obj.category_name.title() if obj.category_name != "dressup" else "Tops"
+        )
+        preview_image = obj.preview_image
+        return f"https://images.cattoviz.com/{category_name}/{preview_image}.png"
