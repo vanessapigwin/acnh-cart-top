@@ -4,7 +4,7 @@ from store.serializers import (
     ProductListSerializer,
     ProductVariantSerializer,
 )
-from django.db.models import OuterRef, Subquery
+from django.db.models import OuterRef, Subquery, F
 from rest_framework import viewsets
 from rest_framework.generics import ListAPIView
 from rest_framework.exceptions import NotFound
@@ -28,20 +28,17 @@ class ProductListView(ListAPIView):
 
         category_id = self.kwargs.get("category_id")
         if category_id:
-            product_queryset = (
+            queryset = (
                 Product.objects.annotate(
                     color=Subquery(color),
-                    image_link=Subquery(filename),
+                    filename=Subquery(filename),
                     description=Subquery(description),
                 )
                 .select_related("category")
                 .filter(category=category_id)
                 .order_by("pk")
+                .annotate(category_name=F("category__category_name"))
             )
-
-            category_query = Categories.objects.filter(category_id=category_id).distinct()
-            category = category_query.values("category_name")[:1]
-            queryset = product_queryset.annotate(category_name=Subquery(category))
 
         if queryset:
             return queryset
@@ -53,7 +50,17 @@ class ProductVariantsView(ListAPIView):
     serializer_class = ProductVariantSerializer
 
     def get_queryset(self):
-        product_id = self.kwargs.get('product_id')
-        queryset = ProductVariants.objects.filter(product=product_id)
+        product_id = self.kwargs.get("product_id")
+        queryset = (
+            ProductVariants.objects.filter(product=product_id)
+            .select_related("product", "product__category")
+            .order_by("pk")
+            .annotate(
+                product_name=F("product__product_name"),
+                price=F("product__price"),
+                style_name=F("product__style_name"),
+                category_name=F("product__category__category_name")
+            )
+        )
 
         return queryset

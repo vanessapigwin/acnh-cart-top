@@ -59,14 +59,14 @@ def test_get_category_products(category_products):
         "price",
         "style_name",
         "color",
-        "image_link",
+        "filename",
         "description",
     ]
     entry = category_products["results"][0]
     assert set(required_fields).issubset(entry.keys())
 
     # P3: url to image is valid
-    url = entry.get("image_link")
+    url = entry.get("filename")
     with urllib.request.urlopen(url) as r:
         assert r.status == 200
 
@@ -85,3 +85,21 @@ def test_get_product_variant(product_variants):
     # P1: pagination
     assert set(["next", "previous", "results"]).issubset(product_variants.keys())
 
+    # P2: check contents
+    required_fields = [
+        "variant_id",
+        "product_id",
+        "product_name",
+        "price",
+        "style_name",
+        "color",
+        "filename",
+        "description",
+    ]
+    product = product_variants["results"][0]
+    assert set(required_fields).issubset(product.keys())
+
+    # P3: url to image is valid
+    url = product.get("filename")
+    with urllib.request.urlopen(url) as r:
+        assert r.status == 200

@@ -8,7 +8,7 @@ listing_common_fields = [
     "price",
     "style_name",
     "color",
-    "image_link",
+    "filename",
     "description",
 ]
 
@@ -20,8 +20,8 @@ def build_img_url(obj):
     category_name = (
         obj.category_name.title() if obj.category_name != "dressup" else "Tops"
     )
-    image_link = obj.image_link
-    return f"https://images.cattoviz.com/{category_name}/{image_link}.png"
+    filename = obj.filename
+    return f"https://images.cattoviz.com/{category_name}/{filename}.png"
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -32,20 +32,27 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class ProductListSerializer(serializers.ModelSerializer):
     color = serializers.CharField(read_only=True)
-    image_link = serializers.SerializerMethodField()
+    filename = serializers.SerializerMethodField()
     description = serializers.CharField(read_only=True)
 
     class Meta:
         model = Product
         fields = listing_common_fields
 
-    def get_image_link(self, obj):
+    def get_filename(self, obj):
         return build_img_url(obj)
 
 
 class ProductVariantSerializer(serializers.ModelSerializer):
-    # variant_id = serializers.PrimaryKeyRelatedField()
+    product_id = serializers.PrimaryKeyRelatedField(read_only=True)
+    product_name = serializers.CharField(read_only=True)
+    price = serializers.IntegerField(read_only=True)
+    style_name = serializers.CharField(read_only=True)
+    filename = serializers.SerializerMethodField()
 
     class Meta:
         model = ProductVariants
-        fields = ["variant_id", "color", "filename", "description", "product"]
+        fields = ["variant_id"] + listing_common_fields
+
+    def get_filename(self, obj):
+        return build_img_url(obj)

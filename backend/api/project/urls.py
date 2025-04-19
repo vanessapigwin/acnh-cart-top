@@ -31,7 +31,7 @@ urlpatterns = [
     path(
         "product/<int:product_id>/",
         views.ProductVariantsView.as_view(),
-        name='productvariant-list'
+        name="productvariant-list",
     ),
     path("", include(router.urls)),
 ]
