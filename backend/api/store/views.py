@@ -59,7 +59,7 @@ class ProductVariantsView(ListAPIView):
                 product_name=F("product__product_name"),
                 price=F("product__price"),
                 style_name=F("product__style_name"),
-                category_name=F("product__category__category_name")
+                category_name=F("product__category__category_name"),
             )
         )
 
