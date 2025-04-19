@@ -17,3 +17,6 @@ test: up
 
 format:
 	black . --line-length 90
+
+lint:
+	flake8 ./api/store/ ./api/project/
