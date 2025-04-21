@@ -1,0 +1,40 @@
+# ------------- builder step ---------------- #
+FROM python:3.10-slim-bullseye as builder
+
+WORKDIR /usr/src/api
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends gcc
+
+# copy django files and create wheel from requirements
+COPY . /usr/src/api/
+COPY ./requirements.txt .
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir /usr/src/api/wheels -r requirements.txt
+
+
+# --------------- final image --------------- #
+FROM python:3.10-slim-bullseye
+
+RUN mkdir -p /home/api
+
+# create api user
+RUN addgroup --system api && adduser --system --group api
+
+# create directories
+ENV HOME=/home/api
+ENV API_HOME=/home/api/web
+RUN mkdir $API_HOME
+WORKDIR $API_HOME
+
+# install dependencies
+COPY --from=builder /usr/src/api/wheels /wheels
+COPY --from=builder /usr/src/api/requirements.txt .
+RUN pip install --upgrade pip
+RUN pip install --no-cache /wheels/*
+
+COPY . $API_HOME
+RUN chown -R api:api $API_HOME
+USER api
