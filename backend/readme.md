@@ -39,6 +39,12 @@ docker compose -f docker-compose.yml exec backend loaddata "<name of json fixure
 - [x] /category/category-id/?page=1 - get the first 10 products from page 1, and a detail from one variant
 - [x] /product/product-id - get the product by id, including variant details
 
+
+## Changes not shown
+- docker setup for nginx used to serve images
+- docker network setup on cattoviz
+- npm setup on cattoviz
+
 ## References
 - [Django docs](https://docs.djangoproject.com/en/5.1)
 - [Django REST Framework](https://www.django-rest-framework.org/)
