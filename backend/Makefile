@@ -4,19 +4,19 @@ export DOCKER_BUILDKIT=1
 all: build up test
 
 build:
-	docker compose build
+	docker compose -f docker-compose.yml build
 
 up:
-	docker compose up -d
+	docker compose -f docker-compose.yml up -d
 
 down:
-	docker compose down --remove-orphans
+	docker compose -f docker-compose.yml down --remove-orphans
 
 test: up
-	docker compose exec backend pytest
+	docker compose -f docker-compose.yml exec backend pytest
 
 format:
-	black . --line-length 90
+	docker compose -f docker-compose.yml exec backend black . --line-length 90
 
 lint:
-	flake8 ./api/store/ ./api/project/
+	docker compose -f docker-compose.yml exec backend flake8 ./store ./project
