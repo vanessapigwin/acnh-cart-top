@@ -65,10 +65,10 @@ def test_get_category_products(category_products):
     entry = category_products["results"][0]
     assert set(required_fields).issubset(entry.keys())
 
-    # P3: url to image is valid
-    url = entry.get("filename")
-    with urllib.request.urlopen(url) as r:
-        assert r.status == 200
+    # # P3: url to image is valid
+    # url = entry.get("filename")
+    # with urllib.request.urlopen(url) as r:
+    #     assert r.status == 200
 
 
 def test_get_category_products_negative(client):

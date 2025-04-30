@@ -3,6 +3,27 @@ The API uses the following:
 - Django REST Framework
 - PostgreSQL (hosted in cattoviz)
 
+## Dev Setup
+1. Clone project
+2. Create `.env` with the following values:
+```
+DEBUG=1
+SECRET_KEY=foo
+DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+SQL_ENGINE=django.db.backends.postgresql
+SQL_DATABASE=sampledb
+SQL_USER=dev
+SQL_PASSWORD=dev_password
+SQL_HOST=db
+SQL_PORT=5432
+```
+3. Build and take the containers up with `make build` and `make up`
+4. Create the necessary django tables, and dummy data with the following commands
+```
+docker compose -f docker-compose.yml exec backend manage.py migrate
+docker compose -f docker-compose.yml exec backend loaddata "<name of json fixure here>"
+```
+
 ## How to run
 - Local (in docker)
     1. Press `Ctrl` + `Shift` + `D`
@@ -16,7 +37,7 @@ The API uses the following:
 ## Routes
 - [x] /categories - list all categories
 - [x] /category/category-id/?page=1 - get the first 10 products from page 1, and a detail from one variant
-- [ ] /product/product-id - get the product by id, including variant details
+- [x] /product/product-id - get the product by id, including variant details
 
 ## References
 - [Django docs](https://docs.djangoproject.com/en/5.1)
