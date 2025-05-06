@@ -1,5 +1,10 @@
-export default function Cart () {
-    return (
-        <div>My cart</div>
-    );
-};
+import MainNavbar from "../../components/MainNavbar";
+
+export default function Cart() {
+  return (
+    <div>
+      <MainNavbar />
+      <div>Cart</div>
+    </div>
+  );
+}

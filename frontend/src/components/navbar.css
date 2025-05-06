@@ -1,0 +1,45 @@
+nav {
+  width: 100%;
+  background-color: rgba(36, 36, 36, 0.7);
+  position: absolute;
+  z-index: 1;
+  padding: 0.75em 1em;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+a {
+  color: #dbdbdb;
+  text-decoration: none solid rgba(36, 36, 36, 0);
+  text-underline-offset: 0.4em;
+  transition: text-decoration-color 0.75s ease-in-out;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+}
+
+a.active {
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  list-style-type: none;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  aspect-ratio: 1;
+  max-width: 35px;
+  max-height: 35px;
+}

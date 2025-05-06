@@ -3,37 +3,37 @@
   "next": null,
   "previous": null,
   "results": [
-      {
-          "category_id": 1,
-          "category_name": "accessories"
-      },
-      {
-          "category_id": 2,
-          "category_name": "bags"
-      },
-      {
-          "category_id": 3,
-          "category_name": "bottoms"
-      },
-      {
-          "category_id": 4,
-          "category_name": "dressup"
-      },
-      {
-          "category_id": 5,
-          "category_name": "headwear"
-      },
-      {
-          "category_id": 6,
-          "category_name": "shoes"
-      },
-      {
-          "category_id": 7,
-          "category_name": "socks"
-      },
-      {
-          "category_id": 8,
-          "category_name": "tops"
-      }
+    {
+      "category_id": 1,
+      "category_name": "accessories"
+    },
+    {
+      "category_id": 2,
+      "category_name": "bags"
+    },
+    {
+      "category_id": 3,
+      "category_name": "bottoms"
+    },
+    {
+      "category_id": 4,
+      "category_name": "dressup"
+    },
+    {
+      "category_id": 5,
+      "category_name": "headwear"
+    },
+    {
+      "category_id": 6,
+      "category_name": "shoes"
+    },
+    {
+      "category_id": 7,
+      "category_name": "socks"
+    },
+    {
+      "category_id": 8,
+      "category_name": "tops"
+    }
   ]
 }

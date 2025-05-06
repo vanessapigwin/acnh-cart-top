@@ -1,16 +1,25 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
+import "./navbar.css";
+import cartlogo from "../assets/cart.png";
 
-export default function MainNavbar () {
-    return (
-        <div>
-            <ul>
-                <li>
-                    <Link to='/'>Home</Link>
-                </li>
-                <li>
-                    <Link to="store">Store</Link>
-                </li>
-            </ul>
-        </div>
-    );
-};
+export default function MainNavbar() {
+  return (
+    <nav>
+      <ul>
+        <li>
+          <NavLink to="/" viewTransition>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/store" viewTransition>
+            Store
+          </NavLink>
+        </li>
+      </ul>
+      <NavLink to="/cart" viewTransition>
+        <img className="logo" src={cartlogo} />
+      </NavLink>
+    </nav>
+  );
+}
