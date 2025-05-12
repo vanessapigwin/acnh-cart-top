@@ -10,7 +10,7 @@ import { useEffect } from "react";
 
 const images = [img1, img2, img3, img4, img5];
 
-export default function Homepage() {
+function HomepageContent() {
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
@@ -29,11 +29,19 @@ export default function Homepage() {
 
   return (
     <div className="mainpage">
-      <MainNavbar />
       <div className="slide-container">
         <img className="slide" src={images[imgIdx]}></img>
       </div>
       <div className="author">{author}</div>
     </div>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <>
+      <MainNavbar />
+      <HomepageContent />
+    </>
   );
 }

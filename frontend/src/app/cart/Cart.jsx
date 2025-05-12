@@ -1,10 +1,18 @@
 import MainNavbar from "../../components/MainNavbar";
 
-export default function Cart() {
+function CartContent() {
   return (
     <div>
-      <MainNavbar />
       <div>Cart</div>
     </div>
+  );
+}
+
+export default function Cart() {
+  return (
+    <>
+      <MainNavbar />
+      <CartContent />
+    </>
   );
 }

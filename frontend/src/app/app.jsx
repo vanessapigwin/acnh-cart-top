@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./home/HomePage";
 import StorePage from "./store/StorePage";
 import Cart from "./cart/Cart";
+import MainNavbar from "../components/MainNavbar";
 
 const router = createBrowserRouter([
   {
