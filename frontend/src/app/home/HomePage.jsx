@@ -24,7 +24,7 @@ export default function Homepage() {
   }, []);
 
   const imgIdx = counter % 5;
-  const img = images[imgIdx]
+  const img = images[imgIdx];
   const author = `/u/${img.split("/").pop().split(".").at(0)}`;
 
   return (
