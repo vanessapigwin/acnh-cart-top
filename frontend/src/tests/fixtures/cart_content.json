@@ -1,0 +1,18 @@
+[
+  {
+    "variant_id": 3042,
+    "product_name": "Acorn Knit Cap",
+    "price": 880,
+    "color": "brown",
+    "filename": "https://images.cattoviz.com/Headwear/CapHatAcorn3.png",
+    "quantity": 1
+  },
+  {
+    "variant_id": 3047,
+    "product_name": "Acorn Knit Cap",
+    "price": 880,
+    "color": "beige",
+    "filename": "https://images.cattoviz.com/Headwear/CapHatAcorn5.png",
+    "quantity": 2
+  }
+]

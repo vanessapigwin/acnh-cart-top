@@ -1,0 +1,67 @@
+{
+  "count": 6,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "variant_id": 3042,
+      "product_id": 564,
+      "product_name": "Acorn Knit Cap",
+      "price": 880,
+      "style_name": "cute",
+      "color": "red",
+      "filename": "https://images.cattoviz.com/Headwear/CapHatAcorn3.png",
+      "description": "A casual, refined acorn knit cap, great for any season wear."
+    },
+    {
+      "variant_id": 3043,
+      "product_id": 564,
+      "product_name": "Acorn Knit Cap",
+      "price": 880,
+      "style_name": "cute",
+      "color": "yellow",
+      "filename": "https://images.cattoviz.com/Headwear/CapHatAcorn1.png",
+      "description": "A vibrant, lightweight acorn knit cap, great for spring wear."
+    },
+    {
+      "variant_id": 3044,
+      "product_id": 564,
+      "product_name": "Acorn Knit Cap",
+      "price": 880,
+      "style_name": "cute",
+      "color": "green",
+      "filename": "https://images.cattoviz.com/Headwear/CapHatAcorn2.png",
+      "description": "A sleek, soft acorn knit cap, great for any season wear."
+    },
+    {
+      "variant_id": 3045,
+      "product_id": 564,
+      "product_name": "Acorn Knit Cap",
+      "price": 880,
+      "style_name": "cute",
+      "color": "blue",
+      "filename": "https://images.cattoviz.com/Headwear/CapHatAcorn4.png",
+      "description": "A elegant, refined acorn knit cap, great for any season wear."
+    },
+    {
+      "variant_id": 3046,
+      "product_id": 564,
+      "product_name": "Acorn Knit Cap",
+      "price": 880,
+      "style_name": "cute",
+      "color": "brown",
+      "filename": "https://images.cattoviz.com/Headwear/CapHatAcorn0.png",
+      "description": "A sleek, lightweight acorn knit cap, great for any season wear."
+    },
+    {
+      "variant_id": 3047,
+      "product_id": 564,
+      "product_name": "Acorn Knit Cap",
+      "price": 880,
+      "style_name": "cute",
+      "color": "beige",
+      "filename": "https://images.cattoviz.com/Headwear/CapHatAcorn5.png",
+      "description": "A casual, luxurious acorn knit cap, great for any season wear."
+    }
+  ]
+}

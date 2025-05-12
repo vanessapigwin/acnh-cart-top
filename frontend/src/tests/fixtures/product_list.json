@@ -1,0 +1,97 @@
+{
+  "count": 193,
+  "next": "http://nookeapi.cattoviz.com/category/5/?page=2",
+  "previous": null,
+  "results": [
+    {
+      "product_id": 564,
+      "product_name": "Acorn Knit Cap",
+      "price": 880,
+      "style_name": "cute",
+      "color": "red",
+      "filename": "https://images.cattoviz.com/Headwear/CapHatAcorn3.png",
+      "description": "A casual, refined acorn knit cap, great for any season wear."
+    },
+    {
+      "product_id": 565,
+      "product_name": "Aran-Knit Cap",
+      "price": 880,
+      "style_name": "simple",
+      "color": "white",
+      "filename": "https://images.cattoviz.com/Headwear/CapHatAlan0.png",
+      "description": "A bold, plush Aran-knit cap, great for any season wear."
+    },
+    {
+      "product_id": 566,
+      "product_name": "Baby'S Hat",
+      "price": 560,
+      "style_name": "cute",
+      "color": "red",
+      "filename": "https://images.cattoviz.com/Headwear/CapBangsBonnet4.png",
+      "description": "A cozy, luxurious baby's hat, great for fall wear."
+    },
+    {
+      "product_id": 567,
+      "product_name": "Balloon Hat",
+      "price": 1120,
+      "style_name": "active",
+      "color": "orange",
+      "filename": "https://images.cattoviz.com/Headwear/CapHatBalloon1.png",
+      "description": "A vibrant, snug balloon hat, great for any season wear."
+    },
+    {
+      "product_id": 568,
+      "product_name": "Barrette",
+      "price": 490,
+      "style_name": "elegant",
+      "color": "pink",
+      "filename": "https://images.cattoviz.com/Headwear/CapOrnamentTBarrette0.png",
+      "description": "A cozy, stretchy barrette, great for fall wear."
+    },
+    {
+      "product_id": 569,
+      "product_name": "Baseball Cap",
+      "price": 840,
+      "style_name": "active",
+      "color": "black",
+      "filename": "https://images.cattoviz.com/Headwear/CapHatBaseball3.png",
+      "description": "A bold, plush baseball cap, great for summer wear."
+    },
+    {
+      "product_id": 570,
+      "product_name": "Batter'S Helmet",
+      "price": 1040,
+      "style_name": "active",
+      "color": "black",
+      "filename": "https://images.cattoviz.com/Headwear/CapHelmetBaseball3.png",
+      "description": "A trendy, lightweight batter's helmet, great for winter wear."
+    },
+    {
+      "product_id": 571,
+      "product_name": "Bear Cap",
+      "price": 1120,
+      "style_name": "cute",
+      "color": "brown",
+      "filename": "https://images.cattoviz.com/Headwear/CapBangsBear0.png",
+      "description": "A elegant, plush bear cap, great for summer wear."
+    },
+    {
+      "product_id": 572,
+      "product_name": "Beret",
+      "price": 880,
+      "style_name": "elegant",
+      "color": "white",
+      "filename": "https://images.cattoviz.com/Headwear/CapHatBeret5.png",
+      "description": "A cozy, luxurious beret, great for summer wear."
+    },
+    {
+      "product_id": 573,
+      "product_name": "Bicycle Helmet",
+      "price": 1100,
+      "style_name": "active",
+      "color": "red",
+      "filename": "https://images.cattoviz.com/Headwear/CapHatCyclemet2.png",
+      "description": "A sleek, soft bicycle helmet, great for spring wear."
+    }
+  ]
+}
