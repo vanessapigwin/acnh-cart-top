@@ -18,7 +18,7 @@ function NavImg({ img }) {
   let location = useLocation();
   const pathname = location.pathname;
   const imgStyle = {
-    filter: pathname === "/" ? "" : "invert(0.5)",
+    filter: pathname === "/" ? "" : "invert(0.7)",
   };
 
   return <img className="logo" style={imgStyle} src={img} />;

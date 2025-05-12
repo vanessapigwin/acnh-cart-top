@@ -8,8 +8,9 @@
 
 ## To do
 
-- [ ] Home page
-- [ ] Navigation + CategoriesPage
+- [x] Home page
+- [x] Navigation
+- [ ] Categories Page
 - [ ] Card
 - [ ] CartItem + Cart
 - [ ] Fetch utility
