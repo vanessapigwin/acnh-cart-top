@@ -6,8 +6,7 @@ nav {
   padding: 0.75em 1em;
   font-size: 1.2em;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 a {
@@ -35,6 +34,12 @@ ul {
   gap: 2em;
   list-style-type: none;
   align-items: center;
+}
+
+.navcontent {
+  width: clamp(600px, 100%, 1280px);
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo {
