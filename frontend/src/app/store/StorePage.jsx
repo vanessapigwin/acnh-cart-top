@@ -11,9 +11,9 @@ function StorePageContent() {
 
 export default function StorePage() {
   return (
-    <>
+    <div className="store-page">
       <MainNavbar />
       <StorePageContent />
-    </>
+    </div>
   );
 }
