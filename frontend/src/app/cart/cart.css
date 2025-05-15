@@ -1,7 +1,3 @@
-/* *  {
-    border: solid 1px blue;
-} */
-
 .cart-page {
   display: flex;
   flex-direction: column;
@@ -36,20 +32,21 @@
 .cart-content-details {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 1em;
+  gap: 2em;
 }
 
 .cart-content-list {
-  padding: 1em;
+  padding: 1em 0;
   flex-direction: column;
 }
 
 .cart-summary {
+  max-height: 300px;
   display: flex;
   flex-direction: column;
   padding: 1em;
   gap: 1em;
-  border: solid 1px #b3b3b3;
+  border: solid 1px #dddcdc;
 }
 
 @media only screen and (max-width: 500px) {

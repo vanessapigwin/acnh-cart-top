@@ -1,4 +1,5 @@
 import MainNavbar from "../../components/navbar/MainNavbar";
+import CartItem from "../../components/cartItem/CartItem";
 import "./cart.css";
 
 function CartContent({ cartItems }) {
@@ -10,7 +11,7 @@ function CartContent({ cartItems }) {
       <div className="cart-content-details">
         <ul className="cart-content-list">
           {data.map((d) => {
-            return <li key={d.variant_id}>{d.product_name}</li>;
+            return <CartItem key={d.variant_id} data={d} />;
           })}
         </ul>
         <div className="cart-summary">
