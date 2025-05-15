@@ -1,4 +1,4 @@
-import MainNavbar from "../../components/MainNavbar";
+import MainNavbar from "../../components/navbar/MainNavbar";
 import "./storepage.css";
 
 function StorePageContent() {

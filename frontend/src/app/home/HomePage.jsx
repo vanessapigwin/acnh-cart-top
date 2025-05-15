@@ -1,4 +1,4 @@
-import MainNavbar from "../../components/MainNavbar";
+import MainNavbar from "../../components/navbar/MainNavbar";
 import "./homepage.css";
 import img1 from "../../assets/Bgal21.jpg";
 import img2 from "../../assets/JoleenJackalope.jpg";

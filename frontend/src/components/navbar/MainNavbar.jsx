@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./navbar.css";
-import cartlogo from "../assets/cart.png";
+import cartlogo from "../../assets/cart.png";
 import { useLocation } from "react-router-dom";
 
 function NavContent({ content }) {

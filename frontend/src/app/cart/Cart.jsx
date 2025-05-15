@@ -1,4 +1,4 @@
-import MainNavbar from "../../components/MainNavbar";
+import MainNavbar from "../../components/navbar/MainNavbar";
 import "./cart.css";
 
 function CartContent({ cartItems }) {
@@ -15,6 +15,7 @@ function CartContent({ cartItems }) {
         </ul>
         <div className="cart-summary">
           <h2>Order Summary</h2>
+          <p>Number of items: 3</p>
           <p>Total: 420</p>
           <div>Button tray here</div>
         </div>
