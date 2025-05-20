@@ -1,0 +1,52 @@
+/* * {
+    border: solid 1px blue;
+} */
+
+.cart-item {
+  width: 100%;
+  margin: 0;
+}
+
+.cartCard {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  padding: 0px;
+}
+
+.cartCard > img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.cartCard > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: start;
+}
+
+.cartItemDetails {
+  width: 100%;
+  min-width: 300px;
+
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+.subtotalCalc {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.qtyPicker {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
