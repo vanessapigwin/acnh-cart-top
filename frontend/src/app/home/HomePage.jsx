@@ -28,20 +28,20 @@ function HomepageContent() {
   const author = `/u/${img.split("/").pop().split(".").at(0)}`;
 
   return (
-    <div className="mainpage">
+    <>
       <div className="slide-container">
         <img className="slide" src={images[imgIdx]}></img>
       </div>
       <div className="author">{author}</div>
-    </div>
+    </>
   );
 }
 
 export default function HomePage() {
   return (
-    <>
+    <div className="mainpage">
       <MainNavbar />
       <HomepageContent />
-    </>
+    </div>
   );
 }
