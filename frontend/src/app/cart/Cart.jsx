@@ -29,7 +29,7 @@ function CartContent({ cartItems }) {
             <span>{total} bells</span>
           </p>
           <div>
-            <button>Order</button>
+            <button className="order-button">Order</button>
             <button>Continue Shopping</button>
           </div>
         </div>

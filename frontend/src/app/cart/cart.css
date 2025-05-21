@@ -17,7 +17,7 @@
 
 .cart-content {
   height: 100%;
-  width: clamp(600px, 100%, 1280px);
+  width: clamp(100px, 100%, 1280px);
   background-color: white;
   padding: 2em;
   flex-direction: column;
@@ -64,7 +64,7 @@
   font-size: 1.2em;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1000px) {
   .cart-content-details {
     display: flex;
     flex-direction: column;
