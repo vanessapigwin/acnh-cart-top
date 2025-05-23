@@ -7,6 +7,16 @@ function CartContent({ cartItems }) {
   const count = data.length;
   const total = data.reduce((sum, d) => sum + d.price * d.quantity, 0);
 
+  if (data.length === 0) {
+    return (
+      <div className="cart-content empty">
+        <br />
+        <h3>Your cart is currently empty</h3>
+        <ShopButton />
+      </div>
+    );
+  }
+
   return (
     <div className="cart-content">
       <h1>My cart</h1>
@@ -29,12 +39,20 @@ function CartContent({ cartItems }) {
             <span>{total} bells</span>
           </p>
           <div>
-            <button className="order-button">Order</button>
-            <button>Continue Shopping</button>
+            <button className="order-button">ORDER</button>
+            <ShopButton />
           </div>
         </div>
       </div>
     </div>
+  );
+}
+
+function ShopButton() {
+  return (
+    <>
+      <button className="shop-button">CONTINUE SHOPPING</button>
+    </>
   );
 }
 

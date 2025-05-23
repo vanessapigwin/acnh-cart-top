@@ -17,7 +17,13 @@
   padding: 2em;
   flex-direction: column;
   align-self: center;
-  margin-top: 60px
+  margin-top: 60px;
+}
+
+.cart-content.empty {
+  display: flex;
+  align-items: first baseline;
+  gap: 1em;
 }
 
 .cart-content > h1 {
@@ -62,7 +68,8 @@
 
 .order-button {
   background-color: #16bba5;
-  color: white
+  color: white;
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 1000px) {

@@ -5,7 +5,7 @@ export default function CartItem({ data }) {
   return (
     <li className="cart-item">
       <div className="cartCard">
-        <img src={data.filename} />
+        <img alt={data.filename} />
         <div className="cartItemDetails">
           <h2>{data.product_name}</h2>
           <p>{data.price} bells</p>
