@@ -1,5 +1,5 @@
 import "./cartItem.css";
-import ImageTile from "../Card";
+import ImageTile from "../imageTile/ImgTile";
 
 export default function CartItem({ data }) {
   const total_price = data.quantity * data.price;

@@ -1,4 +1,4 @@
-import fallbackSrc from "../assets/resetti.png";
+import fallbackSrc from "../../assets/resetti.png";
 
 export default function ImageTile({ filename }) {
   const onError = (e) => {
