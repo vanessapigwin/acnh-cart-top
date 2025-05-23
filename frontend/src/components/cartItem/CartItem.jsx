@@ -1,11 +1,12 @@
 import "./cartItem.css";
+import ImageTile from "../Card";
 
 export default function CartItem({ data }) {
   const total_price = data.quantity * data.price;
   return (
     <li className="cart-item">
       <div className="cartCard">
-        <img alt={data.filename} />
+        <ImageTile filename={data.filename} />
         <div className="cartItemDetails">
           <h2>{data.product_name}</h2>
           <p>{data.price} bells</p>
