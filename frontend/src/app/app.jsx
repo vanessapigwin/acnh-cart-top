@@ -26,9 +26,17 @@ const dummyItems = [
 export default function App() {
   const [cartItems, setCartItems] = useState(dummyItems);
 
-  function handleAdjustItems() {}
+  const handleAdjustItems = (item) => {
+    const newItems = cartItems.flatMap((current) =>
+      current.variant_id === item.variant_id ? item : current,
+    );
+    setCartItems(newItems);
+    console.log(item);
+  };
 
-  function handleRemoveItems() {}
+  const handleRemoveItems = (item) => {
+    console.log(item);
+  };
 
   const router = createBrowserRouter([
     {
