@@ -21,7 +21,7 @@ export default function CartItem({
 
   const total_price = counter * item.price;
 
-  return (
+  return item.quantity > 0  && (
     <li className="cart-item">
       <div className="cartCard">
         <ImageTile filename={item.filename} />
