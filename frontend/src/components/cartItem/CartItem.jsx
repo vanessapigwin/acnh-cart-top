@@ -1,21 +1,42 @@
+import { useState } from "react";
 import "./cartItem.css";
 import ImageTile from "../imageTile/ImgTile";
 
-export default function CartItem({ data }) {
-  const total_price = data.quantity * data.price;
+export default function CartItem({
+  item,
+  handleChangeOrders,
+}) {
+  const [counter, setCounter] = useState(item.quantity);
+
+  function changeQtyHandler(e) {
+    const newQty = parseInt(e.target.value);
+    const updatedItem = { ...item, quantity: newQty };
+
+    // updating local counter
+    setCounter(newQty);
+
+    // update cart contents
+    handleChangeOrders(updatedItem);
+  }
+
+  const total_price = counter * item.price;
+
   return (
     <li className="cart-item">
       <div className="cartCard">
-        <ImageTile filename={data.filename} />
+        <ImageTile filename={item.filename} />
         <div className="cartItemDetails">
-          <h2>{data.product_name}</h2>
-          <p>{data.price} bells</p>
-          <p>Color: {data.color}</p>
-          <p>Price: {data.price}</p>
+          <h2>{item.product_name}</h2>
+          <p>{item.price} bells</p>
+          <p>Color: {item.color}</p>
           <div className="subtotalCalc">
             <div className="qtyPicker">
               <h3>Quantity: </h3>
-              <select>{data.quantity}</select>
+              <input
+                type="number"
+                defaultValue={counter}
+                onChange={changeQtyHandler}
+              ></input>
             </div>
             <h3>Subtotal: {total_price} bells</h3>
           </div>

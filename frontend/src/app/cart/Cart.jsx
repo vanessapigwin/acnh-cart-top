@@ -1,13 +1,28 @@
+import { useState } from "react";
 import MainNavbar from "../../components/navbar/MainNavbar";
 import CartItem from "../../components/cartItem/CartItem";
 import "./cart.css";
 
-function CartContent({ cartItems }) {
-  const data = cartItems;
-  const count = data.length;
+function CartContent({ cartItems, handleAdjustItems, handleRemoveItems }) {
+  const [data, setData] = useState(cartItems);
+  const count = data.reduce((sum, d) => sum + d.quantity, 0);
   const total = data.reduce((sum, d) => sum + d.price * d.quantity, 0);
 
-  if (data.length === 0) {
+  function updateOrders(orderItem) {
+    const updatedCartContent = data.flatMap((current) =>
+      current.variant_id === orderItem.variant_id ? orderItem : current,
+    );
+    // updating local data
+    setData(updatedCartContent);
+
+    // updating toplevel data
+    if (updatedCartContent.quantity === 0) {
+      handleRemoveItems(updatedData);
+    }
+    handleAdjustItems(updatedData);
+  }
+
+  if (count === 0) {
     return (
       <div className="cart-content empty">
         <br />
@@ -24,7 +39,13 @@ function CartContent({ cartItems }) {
       <div className="cart-content-details">
         <ul className="cart-content-list">
           {data.map((d) => {
-            return <CartItem key={d.variant_id} data={d} />;
+            return (
+              <CartItem
+                key={d.variant_id}
+                item={d}
+                handleChangeOrders={updateOrders}
+              />
+            );
           })}
         </ul>
 
@@ -56,11 +77,19 @@ function ShopButton() {
   );
 }
 
-export default function Cart({ cartItems }) {
+export default function Cart({
+  cartItems,
+  handleAdjustItems,
+  handleRemoveItems,
+}) {
   return (
     <div className="cart-page">
       <MainNavbar />
-      <CartContent cartItems={cartItems} />
+      <CartContent
+        cartItems={cartItems}
+        handleAdjustItems={handleAdjustItems}
+        handleRemoveItems={handleRemoveItems}
+      />
     </div>
   );
 }
