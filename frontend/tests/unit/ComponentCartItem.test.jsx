@@ -14,7 +14,7 @@ describe("Positive case", () => {
     };
     const mockHandler = vi.fn();
 
-    render(<CartItem item={data} handleChangeOrders={mockHandler}/>);
+    render(<CartItem item={data} handleChangeOrders={mockHandler} />);
     expect(screen.getByText("Red Shirt")).toBeDefined();
     expect(screen.getByText("100 bells")).toBeDefined();
     expect(screen.getByText("Color: Red")).toBeDefined();
@@ -30,15 +30,15 @@ describe("Positive case", () => {
       price: 100,
       color: "Black",
       quantity: 1,
-      filename: "cool.png"
-    }
+      filename: "cool.png",
+    };
     const mockHandler = vi.fn();
 
-    render(<CartItem item={data} handleChangeOrders={mockHandler}/>)
+    render(<CartItem item={data} handleChangeOrders={mockHandler} />);
     expect(screen.getByRole("spinbutton")).toHaveDisplayValue(1);
     expect(screen.getByText("Subtotal: 100 bells")).toBeDefined();
 
-    fireEvent.change(screen.getByRole("spinbutton"),{target: {value: 2}})
+    fireEvent.change(screen.getByRole("spinbutton"), { target: { value: 2 } });
     expect(screen.getByRole("spinbutton")).toHaveDisplayValue(2);
     expect(screen.getByText("Subtotal: 200 bells")).toBeDefined();
   });
@@ -50,16 +50,15 @@ describe("Positive case", () => {
       price: 100,
       color: "Blue",
       quantity: 1,
-      filename: "skirt.png"
-    }
+      filename: "skirt.png",
+    };
     const mockHandler = vi.fn();
 
-    render(<CartItem item={data} handleChangeOrders={mockHandler}/>)
+    render(<CartItem item={data} handleChangeOrders={mockHandler} />);
     expect(screen.getByRole("spinbutton")).toHaveDisplayValue(1);
     expect(screen.getByText("Subtotal: 100 bells")).toBeDefined();
 
-    fireEvent.change(screen.getByRole("spinbutton"),{target: {value: 0}})
-    expect(screen.queryByText("Blue")).toBeNull()
+    fireEvent.change(screen.getByRole("spinbutton"), { target: { value: 0 } });
+    expect(screen.queryByText("Blue")).toBeNull();
   });
-
 });

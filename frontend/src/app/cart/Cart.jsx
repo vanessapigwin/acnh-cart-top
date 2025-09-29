@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import MainNavbar from "../../components/navbar/MainNavbar";
 import CartItem from "../../components/cartItem/CartItem";
 import "./cart.css";
@@ -17,9 +18,9 @@ function CartContent({ cartItems, handleAdjustItems, handleRemoveItems }) {
 
     // updating toplevel data
     if (updatedCartContent.quantity === 0) {
-      handleRemoveItems(updatedData);
+      handleRemoveItems(data);
     }
-    handleAdjustItems(updatedData);
+    handleAdjustItems(data);
   }
 
   if (count === 0) {
@@ -60,7 +61,7 @@ function CartContent({ cartItems, handleAdjustItems, handleRemoveItems }) {
             <span>{total} bells</span>
           </p>
           <div>
-            <button className="order-button">ORDER</button>
+            <OrderButton />
             <ShopButton />
           </div>
         </div>
@@ -70,9 +71,32 @@ function CartContent({ cartItems, handleAdjustItems, handleRemoveItems }) {
 }
 
 function ShopButton() {
+  let navigate = useNavigate();
   return (
     <>
-      <button className="shop-button">CONTINUE SHOPPING</button>
+      <button
+        className="shop-button"
+        onClick={() => {
+          navigate("/store", { viewTransition: true });
+        }}
+      >
+        CONTINUE SHOPPING
+      </button>
+    </>
+  );
+}
+
+function OrderButton() {
+  return (
+    <>
+      <button
+        className="order-button"
+        onClick={() => {
+          window.location.assign("https://www.youtube.com/watch?v=hvL1339luv0");
+        }}
+      >
+        ORDER
+      </button>
     </>
   );
 }
