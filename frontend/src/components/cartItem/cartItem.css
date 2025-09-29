@@ -44,7 +44,13 @@
 .qtyPicker {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 1rem;
+}
+
+.qtyPicker > input {
+  border: solid 1px #dddcdc;
+  padding: 0.4em;
 }
 
 @media only screen and (max-width: 1000px) {
